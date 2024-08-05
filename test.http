@@ -1,0 +1,37 @@
+### POST request to example server
+POST https://api.mezoo.me/train
+Content-Type: application/json
+
+{
+  "text": "가주아",
+  "label": "1.0"
+}
+
+###### POST request to example server
+POST https://api.mezoo.me/predict
+Content-Type: application/json
+
+{
+  "text": "가주아"
+}
+
+###
+
+### POST request to example server
+POST http://localhost:8000/train
+Content-Type: application/json
+
+{
+  "text": "가주아",
+  "label": "1.0"
+}
+
+###### POST request to example server
+POST http://localhost:8000/predict
+Content-Type: application/json
+
+{
+  "text": "가주아"
+}
+
+###

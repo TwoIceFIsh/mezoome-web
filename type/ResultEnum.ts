@@ -1,0 +1,8 @@
+export enum ResultEnum {
+  NEUTRAL = "NEUTRAL",
+  GREED = "GREED",
+  EXTREME_GREED = "EXTREME GREED",
+  FEAR = "FEAR",
+  EXTREME_FEAR = "EXTREME FEAR"
+
+}

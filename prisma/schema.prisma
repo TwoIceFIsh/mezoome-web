@@ -1,0 +1,102 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type MezoomeArticlesProductSale {
+  cost       String
+  saleStatus String
+}
+
+model Learning {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt     DateTime @db.Date
+  prediction    Float
+  result        String
+  result_number BigInt
+  score         Float
+  text          String
+  updatedAt     DateTime @db.Date
+}
+
+model mezoome_articles {
+  id                     String                     @id @default(auto()) @map("_id") @db.ObjectId
+  articleId              Int                        @unique(map: "articleId_1")
+  attachCalendar         Boolean
+  attachFile             Boolean
+  attachGpx              Boolean
+  attachImage            Boolean
+  attachLink             Boolean
+  attachMap              Boolean
+  attachMovie            Boolean
+  attachMusic            Boolean
+  attachPoll             Boolean
+  blindArticle           Boolean
+  blogScrap              Boolean
+  boardType              String
+  cafeId                 Int
+  commentCount           Int
+  cost                   Int
+  delParent              Boolean
+  enableComment          Boolean
+  enableRecommendation   Boolean
+  escrow                 Boolean
+  formattedCost          String
+  hasNewComment          Boolean
+  headId                 Int?
+  headName               String?
+  imageAttachCount       Int?
+  lastCommentedTimestamp BigInt?
+  likeItCount            Int
+  marketArticle          Boolean
+  memberKey              String
+  memberLevel            Int?
+  memberLevelIconId      Int?
+  memberLiked            Boolean
+  menuId                 Int
+  menuName               String
+  menuType               String
+  newArticle             Boolean
+  onSale                 Boolean
+  openArticle            Boolean
+  popular                Boolean
+  productSale            MezoomeArticlesProductSale
+  profileImage           String
+  readCount              Int
+  refArticleCount        Int
+  refArticleId           Int
+  replyArticle           Boolean
+  replyListOrder         String
+  representImage         String?
+  representImageType     String?
+  restrictMenu           Boolean
+  subject                String
+  useHead                Boolean?
+  useSafetyPayment       Boolean
+  writeDateTimestamp     BigInt
+  writerNickname         String
+  prediction             Float?
+}
+
+model fear_and_greed {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  x      Float
+  y      Float
+  rating String
+}
+
+model mezoome_index {
+  id    String   @id @default(auto()) @map("_id") @db.ObjectId
+  date  DateTime
+  index Float
+}
+
+model fear_and_greed_index {
+  id    String   @id @default(auto()) @map("_id") @db.ObjectId
+  date  DateTime
+  index Float
+}
